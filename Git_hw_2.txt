@@ -8,8 +8,8 @@ GIT Homework 1
 
 JSON
  1. Создать внешний репозиторий c названием JSON
-https://github.com/JuliyaVo/ - New Repositoriy
-
+Done
+https://github.com/JuliyaVo/JSON.git
 2.Клонировать репозиторий JSON на локальный компьютер.
 git clone ссылка на репозиторий
 
@@ -49,7 +49,7 @@ cat > preferences.json
 10. В файл preferences.json добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате JSON.
 {
 "favoriteFilm": "vanilla_sky",
-"favoreteShow": "vanilla_sky",
+"favoriteShow": "vanilla_sky",
 "favoriteFood": sweets,
 "favoriteSeason": "spring",
 "favoriteCountry": "Australia"
@@ -73,6 +73,7 @@ git push
 
 13. На веб интерфейсе создать файл bug_report.json.
 done
+https://github.com/JuliyaVo/JSON/blob/2ae25fe6bb2bb04f5c1d59ebf1243f9a9d974593/bug_report.json
 
 14. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
 done
@@ -90,6 +91,7 @@ XML
 
 1. Создать внешний репозиторий c названием XML.
 done
+https://github.com/JuliyaVo/XML.git
 
 2. Клонировать репозиторий XML на локальный компьютер.
 git clone https://github.com/JuliyaVo/XML.git
@@ -155,8 +157,11 @@ git push
 
 14. На веб интерфейсе создать файл bug_report.xml.
 done
+https://github.com/JuliyaVo/XML/blob/c7ac4586f514995cb530b4d1f0edcc3a01416980/bug_report.xml
+
 15.Сделать Commit changes (сохранить) изменения на веб интерфейсе.
 done
+
 16. На веб интерфейсе модифицировать файл bug_report.xml, добавить баг репорт в формате XML.
 <?xml version="1.0" encoding="UTF-8"?>
 <BugID>
@@ -172,6 +177,7 @@ done
 
 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
 done
+
 18. Синхронизировать внешний и локальный репозиторий XML
 git pull
 
@@ -179,6 +185,7 @@ TXT
 
  1. Создать внешний репозиторий c названием TXT.
 done
+https://github.com/JuliyaVo/TXT.git
 
  2. Клонировать репозиторий TXT на локальный компьютер
  git clone https://github.com/JuliyaVo/TXT.git
@@ -222,8 +229,11 @@ git add . && git commit -m "add file"
 git push
  14. На веб интерфейсе создать файл bug_report.txt.
 done
+https://github.com/JuliyaVo/TXT/blob/c31e3ee22350e7df23bbe7ff47e8ad06b5fc2901/bug_report.txt
+
  15. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
 done
+
  16. На веб интерфейсе модифицировать файл bug_report.txt, добавить баг репорт в формате TXT.
 done
  17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
