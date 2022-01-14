@@ -8,8 +8,9 @@ GIT Homework 1
 
 JSON
  1. Создать внешний репозиторий c названием JSON
-Done
+https://github.com - JuliyaVo - New repository - Repository name: JSON - Create repository
 https://github.com/JuliyaVo/JSON.git
+
 2.Клонировать репозиторий JSON на локальный компьютер.
 git clone ссылка на репозиторий
 
@@ -72,25 +73,52 @@ git commit -m “add file”
 git push
 
 13. На веб интерфейсе создать файл bug_report.json.
-done
+https://github.com/JuliyaVo/JSON - Add file - Create new file - bug_report.json
+
 https://github.com/JuliyaVo/JSON/blob/2ae25fe6bb2bb04f5c1d59ebf1243f9a9d974593/bug_report.json
 
 14. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
-done
+Commit changes - add file bug_report.json
 
 15. На веб интерфейсе модифицировать файл bug_report.json, добавить баг репорт в формате JSON.
-done
+зайти в файл - справа в верхней строке: Edit this file
+{ 
+  "type":bug 
+  "bugID": [
+      "IDnumber": #123,
+      "name": "CART - Unable to add new item to my cart",
+      "reporter": "Juliya Vo",
+      "submitData": 01/12/2022
+     ],
+"summery": "When my cart contains one item, I am unable to add a second item via the add to cart button on a prodact page",
+"descriptions": "When my cart contains one item, I am unable to add a second item via the add to cart button on a prodact page",
+"project": "#12",
+"component": "None",
+"details": [
+       "steps_to_reproduce": "add one item to cart>go to product abc via the search bar>add new item to cart via "add to cart" button",
+       "expected_result": "the cart chould contains 2 item",
+       "actual_result": "the cart contains only 1 item"
+     ],
+"tracking": [
+     "severity": "major",
+     "priority": "high",
+     "assigned_to": "Mustafa Singh"
+    ]
+}
 
-15. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
-done
+16. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
+Commit changes - change file bug_report.json
 
-16. Синхронизировать внешний и локальный репозиторий JSON
+
+17. Синхронизировать внешний и локальный репозиторий JSON
 git pull
 
 XML
 
 1. Создать внешний репозиторий c названием XML.
-done
+
+https://github.com - JuliyaVo - New repository - Repository name: XML - Create repository
+
 https://github.com/JuliyaVo/XML.git
 
 2. Клонировать репозиторий XML на локальный компьютер.
@@ -113,7 +141,7 @@ vim new.xml - push  I
 
 <?xml version="1.0" encoding="UTF-8"?>
 <userInfo>
-      <userName>Juliya Vo</name>
+      <userName>Juliya Vo</userName>
       <userAge>39</userAge>
       <numberOfPets>0</numberOfPets>
       <expectedSalary>1536</expectedSalary>
@@ -156,27 +184,46 @@ git add . && git commit -m "add file"
 git push
 
 14. На веб интерфейсе создать файл bug_report.xml.
-done
+
+https://github.com/JuliyaVo/XML - Add file - Create new file - bug_report.xml
+
 https://github.com/JuliyaVo/XML/blob/c7ac4586f514995cb530b4d1f0edcc3a01416980/bug_report.xml
 
 15.Сделать Commit changes (сохранить) изменения на веб интерфейсе.
-done
+Commit changes - add file bug_report.xml
 
 16. На веб интерфейсе модифицировать файл bug_report.xml, добавить баг репорт в формате XML.
+
+Зайти в файл - справа в верхней строке: Edit this file
+
 <?xml version="1.0" encoding="UTF-8"?>
 <BugID>
         <IDnumber>123</IDnumber>
-        <name>CART</name>
+        <name>CART - Unable to add new item to my cart</name>
         <reporter>JuliyaVo</reporter>
         <date>01/12/2022</date>
-        <discription>.................</discription>
-        
 </BugID>
 
+<summery>When my cart contains one item, I am unable to add a second item via the add to cart button on a prodact page</summery>
+<discription>When my cart contains one item, I am unable to add a second item via the add to cart button on a prodact page</discription>
+<project>#12</project>
+<component>None</component>
+<details>
+      <stepsToReproduce>Add one item to cart>go to product abc via the search bar>add new item to cart via "add to cart" button"</stepsToReproduce>
+      <expectedResult>The cart chould contains 2 item</expectedResult>
+      <actualResult>The cart contains only 1 item</actualResult>
+        
+</details>
+<tracking>
+        <severity>Major</severity>
+        <priority>High</priority>
+        <assignedTo>Mustafa Singh</assignedTo>
+
+</tracking>
 
 
 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
-done
+mes: change file - commit changes
 
 18. Синхронизировать внешний и локальный репозиторий XML
 git pull
@@ -184,7 +231,8 @@ git pull
 TXT
 
  1. Создать внешний репозиторий c названием TXT.
-done
+https://github.com - JuliyaVo - New repository - Repository name: TXT - Create repository
+
 https://github.com/JuliyaVo/TXT.git
 
  2. Клонировать репозиторий TXT на локальный компьютер
@@ -204,7 +252,11 @@ git push
 
  7. Отредактировать содержание файла “new.txt” - написать информацию о себе (ФИО, возраст, количество домашних животных, будущая желаемая зарплата). Всё написать в формате TXT.
 vim filname.txt
-My name is Juliya Vo. I am 39. I don't have any pets. My salary expectations are about 1536.
+
++ My name is Juliya Vo
++ I am 39
++ I don't have any pets
++ My salary expectations are about 1536.
 ESC :wq
 
  8. Отправить изменения на внешний репозиторий.
@@ -212,32 +264,66 @@ git add new.txt
 git commit -m “change file”
 
  9. Создать файл preferences.txt
-Done
+cat > preferences.txt
 
  10. В файл preferences.txt” добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате TXT.
 cat >  preferences.txt
-My favorite film is "Vanilla Sky". My favorite show is "Vanilla Sky". My favorite food is sweets.
++ My favorite film is "Vanilla Sky"
++ My favorite show is "Vanilla Sky"
++ My favorite food is sweets.
++ My favorite season is spring.
++ The country I would like to visit is Australia.
 
  11. Создать файл sklls.txt добавить информацию о скиллах которые будут изучены на курсе в формате TXT
 cat >  skills.txt
 There are hard skills and soft skills.
+-postman
+-git_bash/terminal
+-git_hyb
+-software testing
 
  12. Сделать коммит в одну строку.
 git add . && git commit -m "add file"
 
  13. Отправить сразу 2 файла на внешний репозиторий.
 git push
+
  14. На веб интерфейсе создать файл bug_report.txt.
-done
+https://github.com/JuliyaVo/TXT - Add file - Create new file - bug_report.txt
+
 https://github.com/JuliyaVo/TXT/blob/c31e3ee22350e7df23bbe7ff47e8ad06b5fc2901/bug_report.txt
 
  15. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
-done
+Commit changes - add file bug_report.txt
+
 
  16. На веб интерфейсе модифицировать файл bug_report.txt, добавить баг репорт в формате TXT.
-done
+Зайти в файл - справа в верхней строке: Edit this file
+**BugID**
+        + IDnumber: 123
+        + Name: CART - Unable to add new item to my cart
+        + Reporter: JuliyaVo
+        + Date:01/12/2022
+
+
+**Summer:** When my cart contains one item, I am unable to add a second item via the add to cart button on a prodact page.
+**Discription:** None
+**Project:** #12
+**Componen:** None
+**Details:**
+      *Steps to reproduce: Add one item to cart>go to product abc via the search bar>add new item to cart via "add to cart" button"
+      *Expected result: The cart chould contains 2 item
+      *Actual result:The cart contains only 1 item
+        
+
+**Tracking:**
+        *Severity: Major
+        *Priority: High
+        *Assigned to: Mustafa Singh
+        
  17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
-done
+mes: change file - commit changes
+
  18. Синхронизировать внешний и локальный репозиторий TXT
 git pull
 
