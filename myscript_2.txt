@@ -1,0 +1,10 @@
+#!/bin/bash
+cd /Users/jv/QA_Testing/video
+mkdir lesson_4 lesson_5 lesson_6
+cd /Users/jv/QA_Testing/video/lesson_5
+touch f_1.txt f_2.txt f_3.txt f_4.json f_5.json
+mkdir hw_1 hw_2 hw_3
+ls -la
+mv /Users/jv/QA_Testing/video/lesson_5/f_1.txt /Users/jv/QA_Testing/video/lesson_5/f_2.txt /Users/jv/QA_Testing/video/lesson_6  
+
+
