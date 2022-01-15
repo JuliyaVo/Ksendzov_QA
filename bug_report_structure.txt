@@ -3,6 +3,6 @@
 +Description
 +Environment
 +Steps to reproduce
-Expected result
++Expected result
 +Actual result
 +Attachments (screenshots, videos, text)
