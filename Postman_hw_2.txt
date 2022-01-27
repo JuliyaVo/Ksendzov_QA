@@ -84,17 +84,68 @@ pm.test("S_1.5 is S_4", function () {
 
 http://162.55.220.72:5005/object_info_3
 1. Отправить запрос.
+Done
+
 2. Статус код 200
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
 3. Спарсить response body в json.
+
+var resp_o = pm.response.json()
+
 4. Спарсить request.
+
+var req_JSON = pm.request.url.query.toObject()
+
 5. Проверить, что name в ответе равно name s request (name забрать из request.)
+
+pm.test("N_resp is N_req", function () {
+    pm.expect(resp_o.name).to.eql(req_o.name)
+})
+
 6. Проверить, что age в ответе равно age s request (age забрать из request.)
+
+pm.test("Age_resp is Age_req", function () {
+    pm.expect(resp_o.age).to.eql(req_o.age)
+})
+
 7. Проверить, что salary в ответе равно salary s request (salary забрать из request.)
+
+pm.test("S_resp is S_req", function () {
+    pm.expect(resp_o.salary).to.eql(+(req_o.salary))
+})
+
 8. Вывести в консоль параметр family из response.
+
+console.log("family:", resp_o.family)
+
 9. Проверить, что у параметра dog есть параметры name.
+
+pm.test("DOG has name", function () {
+    pm.expect(resp_o.family.pets.dog).to.have.property("name")
+})
+
 10. Проверить, что у параметра dog есть параметры age.
+
+pm.test("DOG has age", function () {
+    pm.expect(resp_o.family.pets.dog).to.have.property("age")
+})
+
 11. Проверить, что параметр name имеет значение Luky.
+
+pm.test("Name is Luky", function () {
+    pm.expect(resp_o.family.pets.dog.name).to.eql("Luky")
+})
+
 12. Проверить, что параметр age имеет значение 4.
+
+pm.test("Age is 4", function () {
+    pm.expect(resp_o.family.pets.dog.age).to.eql(4)
+})
+
 http://162.55.220.72:5005/object_info_4
 1. Отправить запрос.
 2. Статус код 200
