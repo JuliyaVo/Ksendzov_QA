@@ -36,15 +36,52 @@ var resp_b = pm.response.json()
 
 4. Проверить, что name в ответе равно name s request (name вбить руками.)
 
-
+pm.test("Check name", function () {
+    pm.expect(resp_b.name).to.eql("Juliya");
+});
 5. Проверить, что age в ответе равно age s request (age вбить руками.)
+
+pm.test("Check age", function () {
+    pm.expect(resp_b.age).to.eql("39")
+    });
+
 6. Проверить, что salary в ответе равно salary s request (salary вбить руками.)
+
+pm.test("Check salary", function () {
+    pm.expect(resp_b.salary).to.eql(1568);
+});
 7. Спарсить request.
+var Req_b = request.data
+
 8. Проверить, что name в ответе равно name s request (name забрать из request.)
+
+pm.test("Name_resp is Name_req", function () {
+     pm.expect(resp_b.name).to.eql(Req_b.name)
+})
+
 9. Проверить, что age в ответе равно age s request (age забрать из request.)
+
+pm.test("Age_resp is Age_req", function () {
+      pm.expect(resp_b.age).to.eql(Req_b.age)
+})
+
 10. Проверить, что salary в ответе равно salary s request (salary забрать из request.)
+
+pm.test("S_resp is S_req", function () {
+    pm.expect(resp_b.salary).to.eql(+(Req_b.salary))
+})
+
 11. Вывести в консоль параметр family из response.
+
+console.log("family:", resp_b.family)
+
 12. Проверить что u_salary_1_5_year в ответе равно salary*4 (salary забрать из request)
+
+pm.test("S_1.5 is S_4", function () {
+    pm.expect(resp_b.u_1_5_year).to.eql(resp_b.salary*4)
+})
+
+
 http://162.55.220.72:5005/object_info_3
 1. Отправить запрос.
 2. Статус код 200
