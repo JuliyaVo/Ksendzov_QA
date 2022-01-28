@@ -6,9 +6,14 @@ http://162.55.220.72:5005/first
 1. Отправить запрос.
 Done
 2. Статус код 200
-Get
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+    
 3. Проверить, что в body приходит правильный string.
-Response; This is the first responce from server!
+
+pm.test("Body matches string", function () {
+    pm.expect(pm.response.text()).to.include("This is the first responce from server!");
+});
 
 http://162.55.220.72:5005/user_info_3
 1. Отправить запрос.
@@ -80,7 +85,6 @@ console.log("family:", resp_b.family)
 pm.test("S_1.5 is S_4", function () {
     pm.expect(resp_b.u_1_5_year).to.eql(resp_b.salary*4)
 })
-
 
 http://162.55.220.72:5005/object_info_3
 1. Отправить запрос.
