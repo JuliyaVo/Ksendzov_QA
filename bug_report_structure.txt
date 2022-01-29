@@ -1,8 +1,15 @@
-+Title
-+Severity/Priority
-+Description
++Samary
+
++Severity
+
++Priority
+
 +Environment
+
 +Steps to reproduce
-Expected result
+
 +Actual result
+
++Expected result
+
 +Attachments (screenshots, videos, text)
