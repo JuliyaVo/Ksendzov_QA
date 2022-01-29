@@ -29,12 +29,13 @@ git push
 7.Отредактировать содержание файла “new.json” - написать информацию о себе (ФИО возраст,количество домашних животных,будущая желаемая зарплата). Всё написать в формате JSON.
 vim new.json - push I - Insert text 
 {
-"firstname": "Juliya",
+"firrstname": "Juliya",
 "lastname": "Vo",
-"age": 39,
-"pets": 0,
-"expectedSalary": 1536
+"age": "39",
+"pets": "0",
+"expectedSalary": "1536"
 }
+
 
 ESQ -:wq
 
@@ -50,15 +51,15 @@ cat > preferences.json
 10. В файл preferences.json добавить информацию о своих предпочтениях (Любимый фильм, любимый сериал, любимая еда, любимое время года, сторона которую хотели бы посетить) в формате JSON.
 {
 "favoriteFilm": "vanilla_sky",
-"favoriteShow": "vanilla_sky",
-"favoriteFood": sweets,
+"favoreteShow": "vanilla_sky",
+"favoriteFood": "sweets",
 "favoriteSeason": "spring",
 "favoriteCountry": "Australia"
 }
 
 11. Создать файл sklls.json добавить информацию о скиллах которые будут изучены на курсе в формате JSON
 cat > skills.json
-{              
+{
 "skills": [
 "git_bash",
 "git_hub",
@@ -83,27 +84,21 @@ Commit changes - add file bug_report.json
 15. На веб интерфейсе модифицировать файл bug_report.json, добавить баг репорт в формате JSON.
 зайти в файл - справа в верхней строке: Edit this file
 { 
-  "type":bug 
-  "bugID": [
-      "IDnumber": #123,
+  "Type": "bug",
+  "bugID": {
+      "IDnumber": "123",
       "name": "CART - Unable to add new item to my cart",
       "reporter": "Juliya Vo",
-      "submitData": 01/12/2022
-     ],
+      "submitData": "01/12/2022"
+     },
 "summery": "When my cart contains one item, I am unable to add a second item via the add to cart button on a prodact page",
-"descriptions": "When my cart contains one item, I am unable to add a second item via the add to cart button on a prodact page",
-"project": "#12",
-"component": "None",
-"details": [
-       "steps_to_reproduce": "add one item to cart>go to product abc via the search bar>add new item to cart via "add to cart" button",
-       "expected_result": "the cart chould contains 2 item",
-       "actual_result": "the cart contains only 1 item"
-     ],
-"tracking": [
-     "severity": "major",
-     "priority": "high",
-     "assigned_to": "Mustafa Singh"
-    ]
+"severity": "major",
+"priority": "high",
+"environment": "macOS, 10.12.0&chrom 53",
+"steps_to_reproduce": "add one item to cart>go to product abc via the search bar>add new item to cart via 'add to cart' button",
+"actual_result": "the cart contains only 1 item",     
+"expected_result": "the cart chould contains 2 item",
+"assigned_to": "Mustafa Singh" 
 }
 
 16. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
@@ -166,6 +161,7 @@ cat > preferences.xml
 </userFavorite>
 
 11. Создать файл sklls.xml добавить информацию о скиллах которые будут изучены на курсе в формате XML
+
 <?xml version="1.0" encoding="UTF-8"?>
 <userSkills>
      <category>Hard Skills</category>
@@ -197,29 +193,20 @@ Commit changes - add file bug_report.xml
 Зайти в файл - справа в верхней строке: Edit this file
 
 <?xml version="1.0" encoding="UTF-8"?>
-<BugID>
+<Bug>
         <IDnumber>123</IDnumber>
         <name>CART - Unable to add new item to my cart</name>
         <reporter>JuliyaVo</reporter>
         <date>01/12/2022</date>
-</BugID>
-
 <summery>When my cart contains one item, I am unable to add a second item via the add to cart button on a prodact page</summery>
-<discription>When my cart contains one item, I am unable to add a second item via the add to cart button on a prodact page</discription>
-<project>#12</project>
-<component>None</component>
-<details>
-      <stepsToReproduce>Add one item to cart>go to product abc via the search bar>add new item to cart via "add to cart" button"</stepsToReproduce>
-      <expectedResult>The cart chould contains 2 item</expectedResult>
-      <actualResult>The cart contains only 1 item</actualResult>
-        
-</details>
-<tracking>
-        <severity>Major</severity>
-        <priority>High</priority>
-        <assignedTo>Mustafa Singh</assignedTo>
-
-</tracking>
+<severity>Major</severity>
+<priority>High</priority>
+<environment>macOS_10.12.0; chrome 53</environment>
+<steps_to_reproduce>Add one item to cart - go to product abc via the search bar - add new item to cart via 'add to cart' button"</steps_to_reproduce>
+ <actual_result>The cart contains only 1 item</actual_result>     
+ <expected_result>The cart chould contains 2 item</expected_result>
+ <assignedTo>Mustafa Singh</assignedTo>
+</Bug>
 
 
 17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
@@ -306,20 +293,13 @@ Commit changes - add file bug_report.txt
         + Date:01/12/2022
 
 
-**Summer:** When my cart contains one item, I am unable to add a second item via the add to cart button on a prodact page.
-**Discription:** None
-**Project:** #12
-**Componen:** None
-**Details:**
-      *Steps to reproduce: Add one item to cart>go to product abc via the search bar>add new item to cart via "add to cart" button"
-      *Expected result: The cart chould contains 2 item
-      *Actual result:The cart contains only 1 item
-        
-
-**Tracking:**
-        *Severity: Major
-        *Priority: High
-        *Assigned to: Mustafa Singh
+**Summery:** When my cart contains one item, I am unable to add a second item via the add to cart button on a prodact page.
+*Severity: Major
+*Priority: High
+*Steps to reproduce: Add one item to cart>go to product abc via the search bar>add new item to cart via "add to cart" button"
+*Actual result:The cart contains only 1 item      
+*Expected result: The cart chould contains 2 item
+*Assigned to: Mustafa Singh
         
  17. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
 mes: change file - commit changes
