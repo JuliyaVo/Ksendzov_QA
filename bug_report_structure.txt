@@ -1,8 +1,17 @@
 +Title
-+Severity/Priority
-+Description
+
++Summary
+
++Severity
+
++Priority
+
 +Environment
+
 +Steps to reproduce
-+Expected result
+
 +Actual result
+
++Expected result
+
 +Attachments (screenshots, videos, text)
