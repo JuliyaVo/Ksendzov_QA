@@ -46,9 +46,31 @@ pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
 });
 2) Проверка структуры json в ответе.
-
+     
+     1) спарсить респ
+     2)скопировать ответ и в schema генераторе сгенерить схему
+     3) создать переменную schema и в значение внести сгенерированную раннее схему
+     4)тест:
+     pm.test("Schema data validetion", function () {
+         pm.response.to.have.jsonSchema(schema)
+      });
 3) В ответе указаны коэффициенты умножения salary, напишите тесты по проверке правильности результата перемножения на коэффициент.
+    req_json = JSON.parse(request.data)
+pm.test("S_6_resp is S_req", function () {
+    pm.expect(resp_json.qa_salary_after_6_months).to.eql(+(req_json.salary*2))
+});
+pm.test("S_12_resp is S_req*2.9", function () {
+    pm.expect(resp_json.qa_salary_after_12_months).to.eql(+(req_json.salary*2.9))
+});
+pm.test("S_1.5_resp is S_req*4", function () {
+    pm.expect(+(resp_json.person.u_salary_1_5_year)).to.eql(req_json.salary*4)
+});
+
 4) Достать значение из поля 'u_salary_1.5_year' и передать в поле salary запроса http://162.55.220.72:5005/get_test_user
+Environment_HW_3>>>var_salary
+pm.environment.set("salary", resp_json.person.u_salary_1_5_year)
+http://162.55.220.72:5005/get_test_user?salary={{salary}}
+
 ===================
 
 3) http://162.55.220.72:5005/new_data
@@ -64,11 +86,64 @@ Resp.
   'age': int(age),
   'salary': [salary, str(salary*2), str(salary*3)]}
 
+{
+    "age": 39,
+    "name": "Juliya",
+    "salary": [
+        1568,
+        "3136",
+        "4704"
+    ]
+}
 Тесты:
 1) Статус код 200
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
 2) Проверка структуры json в ответе.
+var resp = pm.response.json ();
+var schema = {
+    "type": "object",
+  "properties": {
+    "age": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "salary": {
+      "type": "array",
+      "items": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "required": [
+    "age",
+    "name",
+    "salary"
+  ]
+}
+pm.test ("Validate schema json", function () {
+    pm.response.to.have.jsonSchema(schema)
+});
+
 3) В ответе указаны коэффициенты умножения salary, напишите тесты по проверке правильности результата перемножения на коэффициент.
+var req_json = request.data
+pm.test("S[1]_resp is S*2_req", function () {
+    pm.expect(+(resp_json.salary[1])).to.eql(req_json.salary*2)
+});
 4) проверить, что 2-й элемент массива salary больше 1-го и 0-го
+
 ===================
 
 4) http://162.55.220.72:5005/test_pet_info
