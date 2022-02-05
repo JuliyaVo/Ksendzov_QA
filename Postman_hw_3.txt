@@ -102,7 +102,7 @@ pm.test("Status code is 200", function () {
 });
 
 2) Проверка структуры json в ответе.
-var resp = pm.response.json ();
+var resp_json = pm.response.json ();
 var schema = {
     "type": "object",
   "properties": {
@@ -143,6 +143,15 @@ pm.test("S[1]_resp is S*2_req", function () {
     pm.expect(+(resp_json.salary[1])).to.eql(req_json.salary*2)
 });
 4) проверить, что 2-й элемент массива salary больше 1-го и 0-го
+var x = true
+let arrayS = resp_json.salary
+if(arrayS[2]>arrayS[1][0]);
+console.log(x)
+
+или
+
+pm.test("Salary[2] is >")
+if(resp_json.salary[2]>resp_json.salary[1]&&resp_json.salary[2]>resp_json.salary[0]);
 
 ===================
 
@@ -160,13 +169,57 @@ Resp.
  'age': age,
  'daily_food':weight * 0.012,
  'daily_sleep': weight * 2.5}
-
+{
+    "age": 10,
+    "daily_food": 0.24,
+    "daily_sleep": 50.0,
+    "name": "Baks"
+}
 
 Тесты:
 1) Статус код 200
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
 2) Проверка структуры json в ответе.
+pm.test("Schema validation", function () {
+var resp_json = pm.response.json ()
+var schema = {
+    "type": "object",
+  "properties": {
+    "age": {
+      "type": "integer"
+    },
+    "daily_food": {
+      "type": "number"
+    },
+    "daily_sleep": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "age",
+    "daily_food",
+    "daily_sleep",
+    "name"
+  ]
+}
+        pm.expect(tv4.validate(resp_json, schema)).to.be.true;
+        
+    });
 3) В ответе указаны коэффициенты умножения weight, напишите тесты по проверке правильности результата перемножения на коэффициент.
+var resp_json = pm.response.json ()
+    var req_json = request.data 
+    pm.test("Daily_food is req_json.weight*0.012", function () {
+        pm.expect(resp_json.daily_food).to.eql(req_json.weight*0.012)
+    });
 
+pm.test("Daily_sleep is req_json.weight*50.0", function () {
+        pm.expect(resp_json.daily_sleep).to.eql(+(req_json.weight*2.5))
+    });
 ===================
 
 5) http://162.55.220.72:5005/get_test_user
@@ -184,13 +237,109 @@ Resp.
  'family':{'children':[['Alex', 24],['Kate', 12]],
  'u_salary_1.5_year': salary * 4}
   }
-
+{
+    "age": "39",
+    "family": {
+        "children": [
+            [
+                "Alex",
+                24
+            ],
+            [
+                "Kate",
+                12
+            ]
+        ],
+        "u_salary_1_5_year": 25088
+    },
+    "name": "Juliya",
+    "salary": 6272
+}
 Тесты:
 1) Статус код 200
-2) Проверка структуры json в ответе.
-3) Проверить что занчение поля name = значению переменной name из окружения
-4) Проверить что занчение поля age в ответе соответсвует отправленному в запросе значению поля age
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
 
+2) Проверка структуры json в ответе.
+
+var resp_json = pm.response.json ()
+var schema = 
+{
+    "type": "object",
+  "properties": {
+    "age": {
+      "type": "string"
+    },
+    "family": {
+      "type": "object",
+      "properties": {
+        "children": {
+          "type": "array",
+          "items": [
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            }
+          ]
+        },
+        "u_salary_1_5_year": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "children",
+        "u_salary_1_5_year"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "salary": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "age",
+    "family",
+    "name",
+    "salary"
+  ]
+}
+pm.test("Schema validation", function () {
+    pm.expect(tv4.validate(resp_json,schema)).to.be.true
+});
+
+3) Проверить что занчение поля name = значению переменной name из окружения
+pm.test("Str_Name_req = var_name_env", function () {
+   var req_json = request.data
+   var name_env = pm.environment.get("name")
+    pm.expect(req_json.name).to.eql(name_env)
+});
+
+4) Проверить что занчение поля age в ответе соответсвует отправленному в запросе значению поля age
+pm.test("Age_resp = Age_req", function () {
+    var req_json = request.data
+    pm.expect(resp_json.age).to.eql(req_json.age)
+});
 ===================
 
 6) http://162.55.220.72:5005/currency
@@ -214,7 +363,18 @@ Resp. Передаётся список массив объектов.
 Тесты:
 1) Можете взять любой объект из присланного списка, используйте js random.
 В объекте возьмите Cur_ID и передать через окружение в следующий запрос.
+pm.test ("", function () {
+    var resp = pm.response.json ()
+    function getRandomInt(max) {
+  return Math.floor(Math.random() * 20);
+}
+console.log(getRandomInt(21));
+});
 
+"Cur_Abbreviation": "CAD",
+        "Cur_ID": 23,
+        "Cur_Name": "Канадский доллар"
+        
  ===================
 
 7) http://162.55.220.72:5005/curr_byn
