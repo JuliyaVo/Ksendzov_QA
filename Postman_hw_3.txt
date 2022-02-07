@@ -381,7 +381,7 @@ console.log(getRandomInt(21));
 req.
 POST
 auth_token
-curr_code: int
+curr_code: int (455 ОК)
 
 Resp.
 {
@@ -392,16 +392,64 @@ Resp.
     "Cur_Scale": int,
     "Date": str
 }
+{
+    "Cur_Abbreviation": "NOK",
+    "Cur_ID": 455,
+    "Cur_Name": "Норвежских крон",
+    "Cur_OfficialRate": 2.9566,
+    "Cur_Scale": 10,
+    "Date": "2022-02-07T00:00:00"
+}
 
 Тесты:
 1) Статус код 200
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
 2) Проверка структуры json в ответе.
-
+pm.test("Json schema validation", function () {
+var resp_json = pm.response.json ()
+var schema = {
+    "type": "object",
+  "properties": {
+    "Cur_Abbreviation": {
+      "type": "string"
+    },
+    "Cur_ID": {
+      "type": "integer"
+    },
+    "Cur_Name": {
+      "type": "string"
+    },
+    "Cur_OfficialRate": {
+      "type": "number"
+    },
+    "Cur_Scale": {
+      "type": "integer"
+    },
+    "Date": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "Cur_Abbreviation",
+    "Cur_ID",
+    "Cur_Name",
+    "Cur_OfficialRate",
+    "Cur_Scale",
+    "Date"
+  ]
+}
+    pm.expect(tv4.validate(resp_json, schema)).to.be.true;
+    
+});
 
 ===============
 ***
 1) получить список валют
+
 2) итерировать список валют
+
 3) в каждой итерации отправлять запрос на сервер для получения курса каждой валюты
 4) если возвращается 500 код, переходим к следующей итреации
 5) если получаем 200 код, проверяем response json на наличие поля "Cur_OfficialRate"
