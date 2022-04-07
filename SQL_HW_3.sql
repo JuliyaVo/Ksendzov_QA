@@ -58,7 +58,7 @@ join roles_employee
 on employees.id = roles_employee.employee_id 
 join roles 
 on roles.id = roles_employee.role_id 
-where roles.role_name like '%Java%';
+where roles.role_name like '%Java%' and roles.role_name not like '%Script%';
 
 --8.Вывести имена и должность только Python разработчиков.
 select employees.employee_name, roles.role_name 
@@ -144,8 +144,7 @@ join employee_salary
 on roles_employee.employee_id = employee_salary.employee_id 
 join salary 
 on employee_salary.salary_id = salary.id
-where roles.role_name like '%Java%'; 
-select * from roles;
+where roles.role_name like '%Java%' and  roles.role_name not like '%Script%'; 
 
 --16.Вывести зарплаты Python разработчиков
 select salary.monthly_salary, roles.role_name 
@@ -195,7 +194,7 @@ join salary
 on employee_salary.salary_id = salary.id 
 join roles 
 on roles_employee.role_id = roles.id 
-where roles.role_name like '%Senior Java%';
+where roles.role_name like '%Senior Java%' and roles.role_name not like '%Script%';
 
 --20.Вывести зарплаты Junior QA инженеров
 select roles.role_name, salary.monthly_salary 
