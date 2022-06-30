@@ -5,7 +5,7 @@
   
   ---
   
-**I'm Software Engineer (Trainee) from** ### 🇺🇦
+**I'm Software Engineer (Trainee) from** 🇺🇦
 ### 🖐️Welcome to my GitHub profile  
   <div id="header" align="center">
   <img src="https://media.giphy.com/media/Y34jqOCXhgEsqRLULa/giphy.gif" width="100"/>
@@ -15,7 +15,8 @@
    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
   </a>
  </div>
+ 
   ---
   
- + 💻I'm currently learning....
+ +💻I'm currently learning....
   
