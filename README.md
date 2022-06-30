@@ -5,7 +5,7 @@
   
   ---
   
-**I'm Software Engineer (Trainee) from** 🇺🇦
+**I'm Software Engineer Student (Trainee) from** 🇺🇦
 🖐️Welcome to my GitHub profile  
   <div id="header" align="center">
   <img src="https://media.giphy.com/media/Y34jqOCXhgEsqRLULa/giphy.gif" width="100"/>
@@ -18,12 +18,17 @@
  
   ---
   
- --🔠I'm currently studying at the QATestLab...
- --🌅I attended the Courses of Vadim Ksenzov...
- --💙Interests: Artsiom Rusau QA Life, Portnov Computer School, QA With Natalia...
- --👩‍💻I'm currently learning 
- <div>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="15" height="15"/>
+    + 🔠I'm currently studying at the QATestLab...
+    + 🌅I attended the Courses of Vadim Ksenzov...
+    + 💙Interests: Artsiom Rusau QA Life, Portnov Computer School, QA With Natalia...
+    + 👩‍💻I'm currently learning 
+ 
+ ### 🛠️ Tools:
+  <div>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/androidstudio/androidstudio-original.svg" title="Androidstudion" alt="Androidstudio" width="25" height="25"/>&nbsp;
+   <img src="https://github.com/devicons/devicon/blob/master/icons/jira/jira-original-wordmark.svg" title="Jira" alt="Jira" width="25" height="25"/>&nbsp;
+   <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/DBeaver_logo.svg" title="DBeaver" alt="DBeaver" width="25" height="25"/>&nbsp;
+   <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-ar21.svg" title="Postman" alt="Postman" width="25" height="25"/>
  </div>
  
   
