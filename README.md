@@ -5,7 +5,7 @@
   
   ---
   
-**I'm Software Engineer Student (Trainee) from** 🇺🇦
+**I'm software engineer student from** 🇺🇦
  
 🖐️Welcome to my GitHub profile  
   <div id="header" align="center">
