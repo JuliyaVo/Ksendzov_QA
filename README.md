@@ -6,7 +6,7 @@
   ---
   
 **I'm Software Engineer (Trainee) from** 🇺🇦
-### 🖐️Welcome to my GitHub profile  
+🖐️Welcome to my GitHub profile  
   <div id="header" align="center">
   <img src="https://media.giphy.com/media/Y34jqOCXhgEsqRLULa/giphy.gif" width="100"/>
  </div>
@@ -18,5 +18,11 @@
  
   ---
   
- +💻I'm currently learning....
+ +🔠I'm currently studying at the QATestLab...
+ +🌅I attended the Courses of Vadim Ksenzov...
+ +💙Interests: Artsiom Rusau QA Life, Portnov Computer School, QA With Natalia...
+ +👩‍💻I'm currently learning <div>
+                            img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="15" height="15"/>
+ </div>
+ 
   
